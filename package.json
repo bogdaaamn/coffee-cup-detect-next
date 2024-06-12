@@ -1,5 +1,5 @@
 {
-  "name": "coffee-cup-next",
+  "name": "coffee-cup-detect-next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@supabase/supabase-js": "^2.43.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.390.0",
