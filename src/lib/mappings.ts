@@ -12,8 +12,6 @@ export async function getTodayCardData() {
     .select("id, created_at, message")
     .gt("created_at", todayDateString);
 
-  console.log(todayData);
-
   const { data: yesterdayData } = await supabaseClient
     .from("detections")
     .select("id, created_at, message")
