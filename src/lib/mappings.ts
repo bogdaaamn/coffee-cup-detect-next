@@ -122,11 +122,14 @@ export async function getTableData() {
 }
 
 export async function getConnectionData() {
-  const { data } = await supabaseClient.from("detections").select().limit(1);
+  const { data } = await supabaseClient
+    .from("detections")
+    .select()
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .single();
 
-  const lastSipTime = data
-    ? new Date(data[0].created_at)
-    : new Date(Date.now());
+  const lastSipTime = data ? new Date(data.created_at) : new Date(Date.now());
 
   return {
     device: "b8:27:eb:93:9f:b8",
