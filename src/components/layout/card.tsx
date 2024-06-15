@@ -89,3 +89,26 @@ export function ConnectionCard({
     </Card>
   );
 }
+
+export function CaffeineDisclaimer() {
+  return (
+    <>
+      <p>
+        Very loosely based on the assumption that an average sip of coffee is
+        approximately 16ml. And that there are 40mg of caffeine per 100ml in a
+        normal coffee.
+      </p>
+      <p className="mt-2">
+        Of course, the amount of water consumed per sip can vary greatly
+        depending on a person individual habits and preferences. Don&apos;t
+        trust everything you read on the internet.
+      </p>
+    </>
+  );
+}
+
+export function SipsDisclaimer() {
+  return (
+    <p>Loosely based on how many times you raised your coffee cup today.</p>
+  );
+}
