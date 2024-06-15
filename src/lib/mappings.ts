@@ -9,12 +9,14 @@ export async function getTodayCardData() {
 
   const { data: todayData } = await supabaseClient
     .from("detections")
-    .select()
+    .select("id, created_at, message")
     .gt("created_at", todayDateString);
+
+  console.log(todayData);
 
   const { data: yesterdayData } = await supabaseClient
     .from("detections")
-    .select()
+    .select("id, created_at, message")
     .lt("created_at", todayDateString)
     .gt("created_at", yesterdayDateString);
 
@@ -47,12 +49,12 @@ export async function getThisWeekCardData() {
 
   const { data: thisWeekData } = await supabaseClient
     .from("detections")
-    .select()
+    .select("id, created_at, message")
     .gt("created_at", oneWeekDateString);
 
   const { data: lastWeekData } = await supabaseClient
     .from("detections")
-    .select()
+    .select("id, created_at, message")
     .lt("created_at", oneWeekDateString)
     .gt("created_at", twoWeeksDateString);
 
@@ -77,7 +79,7 @@ export async function getThisWeekCardData() {
 export async function getTableData() {
   const { data } = await supabaseClient
     .from("detections")
-    .select()
+    .select("id, created_at, message")
     .order("created_at", { ascending: false })
     .limit(10);
 
@@ -124,7 +126,7 @@ export async function getTableData() {
 export async function getConnectionData() {
   const { data } = await supabaseClient
     .from("detections")
-    .select()
+    .select("id, created_at, message")
     .order("created_at", { ascending: false })
     .limit(1)
     .single();
