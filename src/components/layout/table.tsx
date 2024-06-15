@@ -28,8 +28,8 @@ export function PageTable({ data }: PageTableProps) {
   return (
     <Card>
       <CardHeader className="px-7">
-        <CardTitle>Orders</CardTitle>
-        <CardDescription>Recent orders from your store.</CardDescription>
+        <CardTitle>Actions</CardTitle>
+        <CardDescription>Recent actions that we recorded.</CardDescription>
       </CardHeader>
 
       <CardContent>
